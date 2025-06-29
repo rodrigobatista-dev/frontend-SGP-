@@ -2,6 +2,8 @@ import React from "react";
 import "./Dashboard.css";
 import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
 
+import { Link } from "react-router-dom";
+
 function Dashboard() {
   return (
     <div className="dashboard">
@@ -17,24 +19,24 @@ function Dashboard() {
         <nav className="menu">
           <ul>
             <li className="menu-item ativo">
-              <a href=" ">
+              <Link to={"/dashboard"}>
                 <i className="bi bi-bar-chart"></i>     Dashboard
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href=" ">
+              <Link to={"/tarefas"}>
                 <i className="bi bi-list-task"></i> Tarefas
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href=" ">
+              <Link to={'/protos'}>
                 <i className="bi bi-journal-code"></i> Projetos
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href=" ">
+              <Link to={'/usuarios'}>
                 <i className="bi bi-people-fill"></i> Usuários
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
