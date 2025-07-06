@@ -53,9 +53,48 @@
 
 // src/components/Tarefa/TarefaCard.js
 import React from "react";
+// import "./Tarefa.css";
+import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
+import { Link } from "react-router-dom";
 
 function Tarefa({ tarefa }) {
   return (
+    <div className="dashboard">
+      <aside className="menu-lateral">
+        <div className="logo-conterner">
+          <img
+            src={logoHorizontal}
+            alt="logo menu-lateral"
+            className="logo-menu-lateral"
+          />
+        </div>
+
+        <nav className="menu">
+          <ul>
+            <li className="menu-item ativo">
+              <Link to={"/dashboard"}>
+                <i className="bi bi-bar-chart"></i>     Dashboard
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={"/tarefas"}>
+                <i className="bi bi-list-task"></i> Tarefas
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={'/protos'}>
+                <i className="bi bi-journal-code"></i> Projetos
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={'/usuarios'}>
+                <i className="bi bi-people-fill"></i> Usuários
+              </Link>
+            </li>
+          </ul>
+        </nav>
+       </aside>
+            
     <div className="card mb-3 shadow-sm">
       <div className="card-body">
         <h5 className="card-title">{tarefa.titulo}</h5>
@@ -70,6 +109,7 @@ function Tarefa({ tarefa }) {
         </div>
       </div>
     </div>
+   </div>
   );
 }
 

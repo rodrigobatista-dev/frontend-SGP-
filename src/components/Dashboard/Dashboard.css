@@ -1,3 +1,4 @@
+/* Estiliza a barra lateral fixa à esquerda da tela */
 .menu-lateral {
   position: fixed;
   left: 0;
@@ -6,13 +7,13 @@
   height: 100vh;
   background-color: white;
   color: white;
-  padding: 20px 0;
+  padding: 100px 0px; /* Espaço interno no topo e embaixo */
   flex-shrink: 0;
 }
 .menu-lateral li {
   background-color: white;
-  padding: 10px 40px;
-  border-radius: 8px;
+  padding: 20px 15px;
+  border-radius: 60px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -20,6 +21,7 @@
 }
 .menu-lateral li:hover {
   background-color: #3b44e0;
+ 
 }
 .menu-lateral li a {
   display: flex;
@@ -30,12 +32,13 @@
   font-size: 15px;
   padding: 5px;
 }
-
+/* Imagem da logo centralizada */
 .logo-menu-lateral {
-  width: 100px;
+  max-width: 150px;
   height: auto;
 }
 
+/* Container da logo na lateral */
 .logo-conterner {
   border-bottom: 5px solid #ccc;
   padding-bottom: 10px;
@@ -57,13 +60,16 @@
   min-height: 100vh;
   overflow: hidden;
 }
+
+/* Container principal do conteúdo, ao lado do menu */
 .conteudo {
-  margin-left: 200px;
+  /* margin-left: px; */
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
+/* Cabeçalho com o título da página */
 .cabecalho {
   width: 100%;
   padding: 20px;
@@ -71,7 +77,7 @@
   text-align: center;
   margin-left: 15px;
 }
-
+/* Título do cabeçalho */
 .cabecalho-container h1 {
   font-size: 28px;
   margin-left: 0px;
@@ -250,13 +256,13 @@
 
 .linha-logout {
   border-bottom: 5px solid #ccc;
-  padding-bottom: 10px;
+  padding-bottom: 60px;
   margin-bottom: 15px;
 }
 
 /* === BOTÃO LOGOUT === */
 .logout-container {
-  position: absolute;
+  position:relative;
   bottom: 20px;
   width: 100%;
   text-align: center;
@@ -284,6 +290,8 @@
   width: 150px;
   height: auto;
   margin: 0 auto;
+
+  
 }
 
 .cabecalho-container {
@@ -297,7 +305,7 @@
 }
 
 /* Responsivo para telas menores (até 768px) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .menu-lateral {
     position: relative;
     width: 100%;
@@ -318,24 +326,24 @@
 
   .conteudo {
     margin-left: 0;
-    padding-top: 100px; /* espaço pro menu */
-  }
+    padding-top: 100px; espaço pro menu
+  } */
 
-  .painel-principal {
+  /* .painel-principal {
     margin: 0;
     padding: 10px;
   }
 
   .cards-container {
-    grid-template-columns: 1fr; /* só uma coluna */
-  }
+    grid-template-columns: 1fr;  só uma coluna 
+  } */
 
-  .logo-menu-lateral {
+  /* .logo-menu-lateral {
     width: 80px;
   }
 
   .cabecalho-container h1 {
     font-size: 20px;
   }
-}
+} */
 
