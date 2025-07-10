@@ -1,5 +1,6 @@
 /* Estiliza a barra lateral fixa à esquerda da tela */
 .menu-lateral {
+  width: 200px;
   position: fixed;
   left: 0;
   top: 0;
@@ -63,7 +64,7 @@
 
 /* Container principal do conteúdo, ao lado do menu */
 .conteudo {
-  /* margin-left: px; */
+  margin-left: 200px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -304,46 +305,63 @@
   color: black;
 }
 
-/* Responsivo para telas menores (até 768px) */
-/* @media (max-width: 768px) {
-  .menu-lateral {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid #ccc;
+@media (max-width: 768px) {
+  .conteudo {
+    margin-left: 0;
   }
 
-  .menu-lateral ul {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  .cards-container {
+    grid-template-columns: 1fr; /* Exibe os cards em 1 coluna */
+  }
+
+  .painel-principal {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  z-index: 1100;
+  color: #000;
+  cursor: pointer;
+}
+
+/* MENU LATERAL DESLIZANTE EM TELAS PEQUENAS */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-lateral {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu-lateral.aberto {
+    transform: translateX(0);
   }
 
   .conteudo {
     margin-left: 0;
-    padding-top: 100px; espaço pro menu
-  } */
-
-  /* .painel-principal {
-    margin: 0;
-    padding: 10px;
   }
 
   .cards-container {
-    grid-template-columns: 1fr;  só uma coluna 
-  } */
-
-  /* .logo-menu-lateral {
-    width: 80px;
+    grid-template-columns: 1fr;
   }
 
-  .cabecalho-container h1 {
-    font-size: 20px;
+  .painel-principal {
+    margin: 10px;
+    padding: 10px;
   }
-} */
+}
+
+
 
