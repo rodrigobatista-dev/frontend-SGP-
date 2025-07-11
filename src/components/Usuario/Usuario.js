@@ -1,59 +1,26 @@
-import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
 import { Link } from "react-router-dom";
 import "./Usuario.css";
-function Usuario() {
+import DashboardLayout from "../Layout/DashboardLayout";
+
+
+const Usuario = () => {
   return (
-    <div className="dashboard d-flex ">
-      {/* MENU LATERAL */}
-      <aside className="menu-lateral">
-        <div className="logo-container">
-          <img
-            src={logoHorizontal}
-            alt="logo menu-lateral"
-            className="logo-menu-lateral"
-          />
-        </div>
-
-        <nav className="menu">
-          <ul>
-            <li className="menu-item ativo">
-              <Link to={"/dashboard"}>
-                <i className="bi bi-bar-chart"></i> Dashboard
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/tarefas"}>
-                <i className="bi bi-list-task"></i> Tarefas
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/projetos"}>
-                <i className="bi bi-journal-code"></i> Projetos
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/usuarios"}>
-                <i className="bi bi-people-fill"></i> Usuários
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-     
-
-      {/* apartir daqui vamos criar um formulario de cadastro de usuario com nome email cpf e data de nascimento com um botao acidionar cancelar */}
-
+    <DashboardLayout>
       <main
         className="conteudo container"
-        style={{ marginLeft: "auto", marginRight: "0", maxWidth: "900px" }}
+        style={{
+          marginLeft: "auto",
+          marginRight: "200px ",
+          maxWidth: "900px",
+          marginTop: "90px",
+        }}
       >
-         {/* aqui vamos fazer um botao para ir para lista de usuarios outra pagina */}
-         <div className="mb-3">
-           <Link to="/usuarios" className="btn btn-primary">
-             Voltar para Lista de Usuários
-           </Link>
-         </div>
+        {/* aqui vamos fazer um botao para ir para lista de usuarios outra pagina */}
+        <div className="mb-3">
+          <Link to="/usuarios" className="btn btn-primary">
+            Voltar para Lista de Usuários
+          </Link>
+        </div>
 
         <div className="card shadow-sm">
           <div className="card-body">
@@ -143,12 +110,11 @@ function Usuario() {
                   </button>
                 </div>
               </div>
-
-              <div className="form-group mt-4 d-flex justify-content-center gap-2">
-                <button type="submit" className="btn-verde me-2">
-                  Adicionar
+              <div className="form-group mt-4 d-flex justify-content-center gap-3">
+                <button type="submit" className="btn btn-success px-5">
+                  Salvar
                 </button>
-                <button type="button" className="btn-vermelho">
+                <button type="button" className="btn btn-danger px-5">
                   Cancelar
                 </button>
               </div>
@@ -156,7 +122,12 @@ function Usuario() {
           </div>
         </div>
       </main>
-    </div>
+    </DashboardLayout>
+
+     
+
+      
+  
   );
 }
 

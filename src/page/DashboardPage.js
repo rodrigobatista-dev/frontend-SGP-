@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { buscarTarefas } from "../services/api";
+import Dashboard from "../components/Dashboard/Dashboard";
 
-function Dashboard() {
+function DashboardPage() {
   const [quantidadeTarefas, setQuantidadeTarefas] = useState(5);
 
   useEffect(() => {
@@ -15,10 +16,10 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
+      <Dashboard />
       <p>Total de Tarefas: {quantidadeTarefas}</p>
     </div>
   );
 }
 
-export default Dashboard;
+export default DashboardPage;

@@ -1,60 +1,24 @@
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
-import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
-import { Link } from "react-router-dom";
-import { buscarTarefas } from "../../service/api"; 
+import { buscarTarefas } from "../../service/api";
+import DashboardLayout from "../Layout/DashboardLayout";
 
-function Dashboard() {
+const Dashboard =() => {
   const [quantidadeBacklog, setQuantidadeBacklog] = useState(4);
 
   useEffect(() => {
     buscarTarefas()
       .then((tarefas) => {
-        const tarefasBacklog = tarefas.filter(tarefa => tarefa.status === "BACKLOG");
+        const tarefasBacklog = tarefas.filter(
+          (tarefa) => tarefa.status === "BACKLOG"
+        );
         setQuantidadeBacklog(tarefasBacklog.length);
       })
       .catch((err) => console.error("Erro ao buscar tarefas:", err));
   }, []);
 
   return (
-    <div className="dashboard">
-      <aside className="menu-lateral">
-        <div className="logo-conterner">
-          <img src={logoHorizontal} alt="logo menu-lateral" className="logo-menu-lateral" />
-        </div>
-
-        <nav className="menu">
-          <ul>
-            <li className="menu-item ativo">
-              <Link to={"/dashboard"}>
-                <i className="bi bi-bar-chart"></i> Dashboard
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/tarefas"}>
-                <i className="bi bi-list-task"></i> Tarefas
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/projetos"}>
-                <i className="bi bi-journal-code"></i> Projetos
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to={"/usuarios"}>
-                <i className="bi bi-people-fill"></i> Usuários
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="logout-container">
-          <div className="linha-logout"></div>
-          <button className="btn-logout">
-            <i className="bi bi-box-arrow-right"></i> Logout
-          </button>
-        </div>
-      </aside>
+    <DashboardLayout>
 
       <div className="conteudo">
         <header className="cabecalho">
@@ -91,8 +55,9 @@ function Dashboard() {
           </section>
         </main>
       </div>
-    </div>
+  
+    </DashboardLayout>
   );
-} 
+}
 
 export default Dashboard;

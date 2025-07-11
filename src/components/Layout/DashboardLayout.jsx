@@ -1,11 +1,11 @@
-// import "./tarefa.css"; //
-import React from "react";
-import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
-import { Link } from "react-router-dom";
 
-function Tarefas() {
+import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
+
+const DashboardLayout = ({ children }) => {
   return (
-    <div className="dashboard d-flex ">
+    <div className="dashboard">
       <header className="menu-topo">
         <div className="logo-container">
           <img src={logoHorizontal} alt="Logo" className="logo-menu" />
@@ -14,24 +14,24 @@ function Tarefas() {
         <nav className="menu-horizontal">
           <ul className="menu-lista">
             <li className="menu-item">
-              <Link to="/dashboard" className="ativo">
+              <NavLink to="/dashboard" end className={({ isActive }) => (isActive ? "ativo" : "")}>
                 <i className="bi bi-bar-chart"></i> Dashboard
-              </Link>
+              </NavLink>
             </li>
             <li className="menu-item">
-              <Link to="/tarefas">
+              <NavLink to="/tarefas" className={({ isActive }) => (isActive ? "ativo" : "")}>
                 <i className="bi bi-list-task"></i> Tarefas
-              </Link>
+              </NavLink>
             </li>
             <li className="menu-item">
-              <Link to="/projetos">
+              <NavLink to="/novo/projeto" className={({ isActive }) => (isActive ? "ativo" : "")}>
                 <i className="bi bi-journal-code"></i> Projetos
-              </Link>
+              </NavLink>
             </li>
             <li className="menu-item">
-              <Link to="/usuarios">
+              <NavLink to="/usuarios" className={({ isActive }) => (isActive ? "ativo" : "")}>
                 <i className="bi bi-people-fill"></i> Usuários
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -46,36 +46,10 @@ function Tarefas() {
           </div>
         </div>
       </header>
-
-      {/* You can add other content here if needed */}
+      {/* Aqui entra o conteúdo da tela */}
+      <main className="conteudo">{children}</main>
     </div>
   );
+};
 
-}
-
-// const tarefas = [
-//   {
-//     id: 1,
-//     titulo: "Reunião de Kickoff",
-//     descricao: "Realizar reunião de kickoff do projeto Alpha.",
-//     status: "Planejada",
-//     responsavel: "",
-//     projeto: "",
-//     dataHora: "01/01/2024 00:00",
-//   },
-//   {
-//     id: 2,
-//     titulo: "Desenvolver Módulo de Login",
-//     descricao: "Implementar o módulo de login no projeto Alpha.",
-//     status: "Em andamento",
-//     responsavel: "Bruno Souza",
-//     projeto: "Projeto Alpha",
-//     dataHora: "05/01/2024 09:00",
-//   },
-// ];
-
-
-
-
-
-export default Tarefas;
+export default DashboardLayout;
