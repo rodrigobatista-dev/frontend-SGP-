@@ -1,22 +1,6 @@
-// import React from "react";
-// import Tarefa from "../components/Tarefa/Tarefa";
-
-// function TarefaPage() {
-//     return (
-//         <div>
-//         <h1>Página de Tarefas</h1>
-//         <Tarefa />
-//         </div>
-//     ) 
-// }
-
-// export default TarefaPage;
-
-// src/page/TarefasPage.js
-
-import React from "react";
 import { Link } from "react-router-dom";
 import Tarefa from "../components/Tarefa/Tarefa";
+import "./TarefasPage.css";
 function TarefasPage() {
   // Simulação de tarefas
   const tarefas = [
@@ -41,15 +25,20 @@ function TarefasPage() {
   ];
 
   return (
-    <div className="container mt-4">
+    <div className="principal"
+      style={{marginTop:"100px"}}>
+    <div className="container mb-3 "
+    style={{ marginLeft: "auto", marginRight: " ", maxWidth: "900px", marginTop: "100px", }}
+    >
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2>Tarefas</h2>
+        <h2 className="titulo">Tarefas</h2>
         <Link to="/tarefas/nova" className="btn btn-success">Nova Tarefa</Link>
       </div>
 
       {tarefas.map((tarefa) => (
         <Tarefa key={tarefa.id} tarefa={tarefa} />
       ))}
+    </div>
     </div>
   );
 }

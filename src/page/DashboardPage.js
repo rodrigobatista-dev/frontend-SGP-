@@ -1,14 +1,24 @@
-import React from "react";
-import Dashboard from "../components/Dashboard/Dashboard";
+import React, { useEffect, useState } from "react";
+import { buscarTarefas } from "../services/api";
 
-function DashboardPage() {
-    return (
-        <div>
-        <h1>Página de Dashboard</h1>
-        <Dashboard />
-        </div>
-    ) 
-    
+function Dashboard() {
+  const [quantidadeTarefas, setQuantidadeTarefas] = useState(5);
+
+  useEffect(() => {
+    buscarTarefas()
+      .then((tarefas) => {
+        console.log("Tarefas recebidas:", tarefas); // 👈 Veja no console
+        setQuantidadeTarefas(tarefas.length);
+      })
+      .catch((err) => console.error("Erro ao buscar tarefas:", err)); // 👈 Erros aqui
+  }, []);
+
+  return (
+    <div className="dashboard">
+      <h1>Dashboard</h1>
+      <p>Total de Tarefas: {quantidadeTarefas}</p>
+    </div>
+  );
 }
 
-export default DashboardPage;
+export default Dashboard;

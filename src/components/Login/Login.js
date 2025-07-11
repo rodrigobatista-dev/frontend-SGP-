@@ -31,14 +31,14 @@ function Login({ onLogin }) {
           <label className="form-check-label">
             <input type="checkbox" className="form-check-input me-1" /> Lembrar
           </label>
-          <a href=" " className="text-white">Esqueci minha senha</a>
+          {/* <a href=" " className="text-white">Esqueci minha senha</a> */}
         </div>
 
         <button type="submit" className="btn btn-primary w-100">Entrar</button>
 
-        <div className="text-center mt-3 text-white">
+        {/* <div className="text-center mt-3 text-white">
           Não tem conta? <a href=" " className="fw-bold text-white">Cadastre-se</a>
-        </div>
+        </div> */}
       </form>
     </div>
   );

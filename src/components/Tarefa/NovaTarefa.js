@@ -1,6 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import sgpLogo from "../../assets/img/treina_recife_miniatura.png"
+import LogoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
+
+import { useNavigate, Link } from "react-router-dom";
+
 
 function NovaTarefa() {
   const listaTarefas = useNavigate();
@@ -12,8 +14,48 @@ function NovaTarefa() {
   };
 
   return (
+    <div className="dashboard d-flex ">
+      {/* MENU LATERAL */}
+      <aside className="menu-lateral">
+        <div className="logo-container">
+          <img
+            src={LogoHorizontal}
+            alt="logo menu-lateral"
+            className="logo-menu-lateral"
+          />
+        </div>
+
+        <nav className="menu">
+          <ul>
+            <li className="menu-item ativo">
+              <Link to={"/dashboard"}>
+                <i className="bi bi-bar-chart"></i> Dashboard
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={"/tarefas"}>
+                <i className="bi bi-list-task"></i> Tarefas
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={"/projetos"}>
+                <i className="bi bi-journal-code"></i> Projetos
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to={"/usuarios"}>
+                <i className="bi bi-people-fill"></i> Usuários
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+
     <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="d-flex justify-content-between align-items-center mb-3"
+       style={{ marginLeft: "auto", marginRight: "90px ", maxWidth: "840px", marginTop: "90px", }}
+      >
         <h2>Nova Tarefa</h2>
         <button className="btn btn-danger" onClick={() => listaTarefas("/tarefas")}>
           Fechar
@@ -23,8 +65,10 @@ function NovaTarefa() {
    
         
 
-      <form onSubmit={handleSubmit} className="formulario p-4 rounded shadow ">
-        <img src={sgpLogo} alt="Logo SGP" className="logo mb-3" />
+      <form  onSubmit={handleSubmit}
+      style={{ marginLeft: "auto", marginRight: "10", maxWidth: "950px",  }}
+      >
+        
         <div className="mb-3">
             <label className="form-label">Título*</label>
             <input type="text" className="form-control" required placeholder="Digite o título da tarefa..."/>
@@ -73,6 +117,7 @@ function NovaTarefa() {
 
         <button type="submit" className="btn btn-success">Salvar</button>
       </form>
+    </div>
     </div>
   );
 }

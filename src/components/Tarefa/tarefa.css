@@ -1,0 +1,8 @@
+/* Basic CSS rule to ensure file is valid */
+body {
+  margin: 0;
+}
+.conteudo{
+    background-color: #0e0157;
+}
+

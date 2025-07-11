@@ -1,0 +1,111 @@
+.menu-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dee2e6; /* cor de fundo do menu */
+  padding: 10px 20px;
+}
+
+.logo-container img.logo-menu-horizontal {
+  height: 40px;
+}
+
+.menu-lista-horizontal {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lista-horizontal .menu-item {
+  justify-content: center; /* Centraliza todo o conteúdo */
+  margin-left: 20px;
+}
+
+.menu-lista-horizontal .menu-item a {
+  width: auto;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-lista-horizontal .menu-item a:hover {
+  color: #00bcd4;
+}
+
+
+.formulario-usuario .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-usuario label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.formulario-usuario input,
+.formulario-usuario select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn {
+  
+  padding: 8px 16px;
+  font-weight: 500;
+}
+.btn-verde {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-vermelho {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-verde:hover {
+  background-color: #218838;
+}
+
+.btn-vermelho:hover {
+  background-color: #c82333;
+}
+
+/* .btn-verde,
+.btn-vermelho {
+  align-items: center;
+  width: 100px; 
+  padding: 4px 10px;   
+  font-size: 14px;     
+  border-radius: 4px;
+  font-weight: 500;
+} */
+

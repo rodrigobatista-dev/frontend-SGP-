@@ -1,0 +1,19 @@
+.principal {
+    
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: auto;
+  padding: 20px;
+  background-color: #0e0157;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.titulo{
+    color: white;
+}
