@@ -7,6 +7,7 @@ import ProjetosPage from "./page/ProjetosPage";
 import UsuariosPage from "./page/UsuariosPage";
 import NovaTarefaPage from "./page/NovaTarefaPage";
 import NovoProjetosPage from "./page/NovoProjetosPage";
+import DashboardLayout from "./components/Layout/DashboardLayout";
 
 
 
@@ -21,7 +22,7 @@ function App() {
     <Router>
       <Routes>
         
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<DashboardLayout />} />
         <Route path="/tarefas" element={<TarefaPage />} />
         <Route path="/tarefas/nova" element={<NovaTarefaPage />} />
         <Route path="/projetos" element={<ProjetosPage />} />
