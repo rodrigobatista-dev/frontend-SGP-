@@ -2,7 +2,7 @@
 // import Tarefa from "../components/Tarefa/Tarefa";
 // import "./TarefasPage.css";
 
-import Tarefas from "../components/Tarefa/Tarefa";
+
 
 // function TarefasPage() {
 //   return  <NovaTarefa />;
@@ -52,7 +52,7 @@ import Tarefas from "../components/Tarefa/Tarefa";
 // export default TarefasPage;
 // src/page/TarefasPage.jsx
 
-
+import Tarefas from "../components/Tarefa/Tarefa";
 
 
 function TarefaPage() {

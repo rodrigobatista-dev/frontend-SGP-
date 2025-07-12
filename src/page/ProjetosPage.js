@@ -1,8 +1,9 @@
 import React from "react";
 
+import Projeto from "../components/Projetos/Projeto"
 function ProjetosPage () {
 
-    return <h1>Página de Projetoss</h1>
+    return <Projeto />
 
 }
 export default ProjetosPage

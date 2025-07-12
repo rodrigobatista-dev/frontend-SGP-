@@ -1,23 +1,24 @@
 import React from "react";
+import MenuTopo from "../Layout/MenuTopo";
 
 
 import { Link } from "react-router-dom";
-import DashboardLayout from "../Layout/DashboardLayout";
+
 
 const ProjetosNovo = () => {
   return (
-    <DashboardLayout>
+    <MenuTopo>
       <main
         className="conteudo container"
         style={{
-          marginLeft: "auto",
-          marginRight: "200px",
-          maxWidth: "900px",
-          marginTop: "90px",
-        }}
+        marginLeft: "auto",
+        marginRight: "200px",
+        maxWidth: "900px",
+        marginTop: "1px",
+      }}
       >
         <div className="mb-3">
-          <Link to="/novo/projeto" className="btn btn-primary">
+          <Link to="/projetos" className="btn btn-primary">
             Voltar para Lista de Projetos
           </Link>
         </div>
@@ -100,7 +101,7 @@ const ProjetosNovo = () => {
           </div>
         </div>
       </main>
-      </DashboardLayout>
+      </MenuTopo>
   );
 }
 

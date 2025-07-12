@@ -1,81 +1,114 @@
 // import "./tarefa.css"; //
 import React from "react";
-import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
-import { Link } from "react-router-dom";
+import MenuTopo from "../Layout/MenuTopo";
+import { FaBroom, FaFilter, FaFilePdf } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
-function Tarefas() {
+function TarefasList() {
+  
   return (
-    <div className="dashboard d-flex ">
-      <header className="menu-topo">
-        <div className="logo-container">
-          <img src={logoHorizontal} alt="Logo" className="logo-menu" />
+    <MenuTopo>
+    <div className="container mt-5 bg-white p-4 rounded shadow-sm">
+      {/* Título e botões topo */}
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h3>
+          <i className="bi bi-list-task me-2"></i>Lista de Tarefas
+        </h3>
+        <div>
+          <button className="btn btn-dark me-2">
+            <FaFilePdf className="me-1" />
+            Exportar PDF
+          </button>
+          <NavLink to="/nova-tarefa" className="btn btn-success">
+            + Nova Tarefa
+          </NavLink>
         </div>
+      </div>
 
-        <nav className="menu-horizontal">
-          <ul className="menu-lista">
-            <li className="menu-item">
-              <Link to="/dashboard" className="ativo">
-                <i className="bi bi-bar-chart"></i> Dashboard
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to="/tarefas">
-                <i className="bi bi-list-task"></i> Tarefas
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to="/projetos">
-                <i className="bi bi-journal-code"></i> Projetos
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link to="/usuarios">
-                <i className="bi bi-people-fill"></i> Usuários
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="usuario-logado">
-          <i className="bi bi-person-circle"></i>
-          Rodrigo
-          <i className="bi bi-caret-down-fill"></i>
-          <div className="submenu-usuario">
-            <Link to="/perfil">Perfil</Link>
-            <button onClick={() => alert("Logout")}>Sair</button>
+      {/* Filtros */}
+      <div className="bg-light p-3 rounded mb-3">
+        <div className="row g-3 align-items-end">
+          <div className="col-md-3">
+            <label className="form-label">Status</label>
+            <select className="form-select">
+              <option>Todos</option>
+              <option>Backlog</option>
+              <option>Aberta</option>
+              <option>Entregue</option>
+              <option>Encerrada</option>
+            </select>
+          </div>
+          <div className="col-md-3">
+            <label className="form-label">Prioridade</label>
+            <select className="form-select">
+              <option>Todas</option>
+              <option>Baixa</option>
+              <option>Média</option>
+              <option>Alta</option>
+            </select>
+          </div>
+          <div className="col-md-3">
+            <label className="form-label">Projeto</label>
+            <select className="form-select">
+              <option>Todos</option>
+              <option>Projeto 1</option>
+              <option>Projeto 2</option>
+            </select>
+          </div>
+          <div className="col-md-3 d-flex gap-2">
+            <button className="btn btn-primary">
+              <FaBroom className="me-1" />
+              Limpar
+            </button>
+            <button className="btn btn-success">
+              <FaFilter className="me-1" />
+              Filtrar
+            </button>
           </div>
         </div>
-      </header>
+      </div>
 
-      {/* You can add other content here if needed */}
+      {/* Tabela (ainda sem dados) */}
+      <div className="table-responsive mb-3">
+        <table className="table table-bordered table-hover">
+          <thead className="table-light">
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Status</th>
+              <th>Prioridade</th>
+              <th>Projeto</th>
+              <th>Responsável</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colSpan="7" className="text-center text-muted">
+                Mostrando 0 de 0 registros
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Paginação */}
+      <nav className="d-flex justify-content-between">
+        <span className="text-muted">Mostrando 0 de 0 registros</span>
+        <ul className="pagination pagination-sm mb-0">
+          <li className="page-item disabled">
+            <span className="page-link">Anterior</span>
+          </li>
+          <li className="page-item disabled">
+            <span className="page-link">Próximo</span>
+          </li>
+        </ul>
+      </nav>
     </div>
+    </MenuTopo>
   );
 
 }
 
-// const tarefas = [
-//   {
-//     id: 1,
-//     titulo: "Reunião de Kickoff",
-//     descricao: "Realizar reunião de kickoff do projeto Alpha.",
-//     status: "Planejada",
-//     responsavel: "",
-//     projeto: "",
-//     dataHora: "01/01/2024 00:00",
-//   },
-//   {
-//     id: 2,
-//     titulo: "Desenvolver Módulo de Login",
-//     descricao: "Implementar o módulo de login no projeto Alpha.",
-//     status: "Em andamento",
-//     responsavel: "Bruno Souza",
-//     projeto: "Projeto Alpha",
-//     dataHora: "05/01/2024 09:00",
-//   },
-// ];
 
-
-
-
-
-export default Tarefas;
+export default TarefasList;

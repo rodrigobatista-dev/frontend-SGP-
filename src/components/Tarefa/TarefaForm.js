@@ -2,12 +2,12 @@ import React from "react";
 
 
 import {Link} from "react-router-dom";
-import DashboardLayout from "../Layout/DashboardLayout";
+import MenuTopo from "../Layout/MenuTopo";
 
 
-const NovaTarefa = () =>  {
+const TarefaForm = () =>  {
   return (
-    <DashboardLayout>
+    <MenuTopo>
 
       <main
       className="conteudo container"
@@ -15,11 +15,11 @@ const NovaTarefa = () =>  {
         marginLeft: "auto",
         marginRight: "200px",
         maxWidth: "900px",
-        marginTop: "90px",
+        marginTop: "1px",
       }}
     >
       <div className="mb-3">
-        <Link to="/tarefas" className="btn btn-primary">
+        <Link to="/tarefa" className="btn btn-primary">
           Voltar para Lista de Tarefas
         </Link>
       </div>
@@ -96,9 +96,9 @@ const NovaTarefa = () =>  {
       </div>
     </main>
     
-  </DashboardLayout>       
+  </MenuTopo>       
   );
 }
 
-export default NovaTarefa;
+export default TarefaForm;
 

@@ -1,24 +1,24 @@
-import React from "react";
-import MenuTopo from "../Layout/MenuTopo";
 import { FaFilePdf } from "react-icons/fa";
+import MenuTopo from "../Layout/MenuTopo";
 import { NavLink } from "react-router-dom";
 
-const UsuarioList = () => {
+function ProjetoList() {
   return (
     <MenuTopo>
       <div className="container mt-5 bg-white p-4 rounded shadow-sm">
-        {/* Título e os botões topo */}
-        <div className="d-flex justify-content-between align-items-center mb-4">
+
+        {/* Título e botões */}
+        <div className="d-flex justify-content-between align-items-center mb-3">
           <h3>
-            <i className="bi bi-people-fill me-2"></i>Lista de Usuários
+            <i className="bi bi-journal-code me-2"></i>Lista de Projetos
           </h3>
           <div>
             <button className="btn btn-dark me-2">
               <FaFilePdf className="me-1" />
               Exportar PDF
             </button>
-            <NavLink to="/novo-usuarios" className="btn btn-success">
-              + Novo Usuário
+            <NavLink to="/novo-projeto" className="btn btn-success">
+              + Novo Projeto
             </NavLink>
           </div>
         </div>
@@ -26,8 +26,8 @@ const UsuarioList = () => {
         {/* Filtros */}
         <div className="bg-light p-3 rounded mb-3">
           <div className="row g-3">
-            <div className="col-md-3">
-              <label className="form-label">Nome</label>
+            <div className="col-md-6">
+              <label className="form-label">Nome do Projeto</label>
               <input
                 type="text"
                 className="form-control"
@@ -35,52 +35,30 @@ const UsuarioList = () => {
               />
             </div>
 
-            <div className="col-md-3">
-              <label className="form-label">CPF</label>
+            <div className="col-md-6">
+              <label className="form-label">Responsável</label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Digite o CPF"
+                placeholder="Responsável"
               />
-            </div>
-
-            <div className="col-md-3">
-              <label className="form-label">E-mail</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Digite o e-mail"
-              />
-            </div>
-
-            <div className="col-md-3">
-              <label className="form-label">Status</label>
-              <select className="form-select">
-                <option>Todos</option>
-                <option>Ativo</option>
-                <option>Inativo</option>
-              </select>
             </div>
           </div>
         </div>
 
-        {/* Tabela de Usuários */}
+        {/* Resultado da busca (tabela ou mensagem) */}
         <div className="table-responsive mb-3">
           <table className="table table-bordered table-hover">
             <thead className="table-light">
               <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Email</th>
-                <th>Idade</th>
-                <th>Status</th>
-                <th>Ações</th>
+                <th>Nome do Projeto</th>
+                <th>Responsável</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td colSpan="6" className="text-center text-muted">
-                  Nenhum usuário encontrado
+                <td colSpan="2" className="text-center text-muted">
+                  Nenhum projeto encontrado
                 </td>
               </tr>
             </tbody>
@@ -99,9 +77,10 @@ const UsuarioList = () => {
             </li>
           </ul>
         </nav>
+
       </div>
     </MenuTopo>
   );
-};
+}
 
-export default UsuarioList;
+export default ProjetoList;

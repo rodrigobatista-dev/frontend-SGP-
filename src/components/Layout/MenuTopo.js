@@ -1,9 +1,8 @@
-
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logoHorizontal from "../../assets/img/sgp_logo_horizontal.png";
 
-const DashboardLayout = ({ children }) => {
+const MenuTopo = ({ children }) => {
   return (
     <div className="dashboard">
       <header className="menu-topo">
@@ -14,22 +13,43 @@ const DashboardLayout = ({ children }) => {
         <nav className="menu-horizontal">
           <ul className="menu-lista">
             <li className="menu-item">
-              <NavLink to="/dashboard" end className={({ isActive }) => (isActive ? "ativo" : "")}>
+              <NavLink
+                to="/dashboard"
+                end
+                className={({ isActive }) =>
+                  `link-menu nav-link ${isActive ? "ativo" : ""}`
+                }
+              >
                 <i className="bi bi-bar-chart"></i> Dashboard
               </NavLink>
             </li>
             <li className="menu-item">
-              <NavLink to="/tarefas" className={({ isActive }) => (isActive ? "ativo" : "")}>
+              <Link
+                to="/nova-tarefa"
+                className={({ isActive }) =>
+                  `link-menu nav-link ${isActive ? "ativo" : ""}`
+                }
+              >
                 <i className="bi bi-list-task"></i> Tarefas
-              </NavLink>
+              </Link>
             </li>
             <li className="menu-item">
-              <NavLink to="/novo/projeto" className={({ isActive }) => (isActive ? "ativo" : "")}>
+              <Link
+                to="/novo-projeto"
+                className={({ isActive }) =>
+                  `link-menu nav-link ${isActive ? "ativo" : ""}`
+                }
+              >
                 <i className="bi bi-journal-code"></i> Projetos
-              </NavLink>
+              </Link>
             </li>
             <li className="menu-item">
-              <NavLink to="/usuarios" className={({ isActive }) => (isActive ? "ativo" : "")}>
+              <NavLink
+                to="/novo-usuarios"
+                className={({ isActive }) =>
+                  `link-menu nav-link ${isActive ? "ativo" : ""}`
+                }
+              >
                 <i className="bi bi-people-fill"></i> Usuários
               </NavLink>
             </li>
@@ -52,4 +72,4 @@ const DashboardLayout = ({ children }) => {
   );
 };
 
-export default DashboardLayout;
+export default MenuTopo;

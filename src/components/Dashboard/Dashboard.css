@@ -1,3 +1,6 @@
+
+
+
 /* === MENU TOPO FIXO === */
 .menu-topo {
   display: flex;
@@ -15,28 +18,36 @@
 
 /* Logo à esquerda */
 .logo-menu {
+  
   height: 50px;
 }
 
+
 /* MENU CENTRAL */
 .menu-horizontal .menu-lista {
+  background-color: #ccc;
+  background-size: auto;
   display: flex;
-  gap: 30px;
+  gap: 100px;
   list-style: none;
   margin: 0;
   padding: 0;
+  
+  
 }
 
 .menu-horizontal .menu-item a {
+  
   text-decoration: none;
   color: #333;
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   padding: 8px 12px;
   border-radius: 20px;
-  transition: background-color 0.2s ease;
+  
+  transition: background-color 0.3s ease;
 }
 
 
@@ -107,7 +118,7 @@
 /* MARGEM NO CONTEÚDO P/ NÃO FICAR POR BAIXO DO MENU */
 .conteudo {
   margin-top: 80px;
-  padding: 20px;
+  
 }
 
 /* RESPONSIVO */
@@ -140,13 +151,14 @@
   margin-top: 20px;
   margin-bottom: auto;
   padding: 20px;
-  background-color: #0e0157;
+  background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
 }
 
 /* Container principal do conteúdo, ao lado do menu */
 .conteudo {
+  background-color:#0e005a ;
   max-width:none;
   left: 0;
   padding: 20px;
@@ -156,17 +168,17 @@
 
 /* Cabeçalho com o título da página */
 .cabecalho {
+  
   width: 100%;
   padding: 20px;
-  color: rgb(18, 16, 16);
   text-align: center;
   margin-left: 15px;
 }
 /* Título do cabeçalho */
-.cabecalho-container h1 {
-  font-size: 28px;
-  margin-left: 0px;
-  margin-bottom: auto;
+.container h1 {
+  background-color: transparent;
+  color:white;
+
 }
 
 /* Container dos cards */
@@ -181,7 +193,7 @@
 
 /* === CARD BACKLOG === */
 .card-backlog {
-  background-color: green;
+  background-color: green !important;
   border: 2px solid #ccc;
   padding: 20px;
   border-radius: 12px;
@@ -191,7 +203,7 @@
 }
 
 .card-backlog:hover {
-  background-color: #45a049;
+  background-color: #45a049 !important;
 }
 
 .card-backlog h3 {
@@ -218,7 +230,7 @@
 
 /* === CARD ATIVIDADES === */
 .card-atividades {
-  background-color: rgb(34, 67, 232);
+  background-color: rgb(34, 67, 232) !important;
   border: 2px solid #ccc;
   padding: 20px;
   border-radius: 12px;
@@ -228,7 +240,7 @@
 }
 
 .card-atividades:hover {
-  background-color: #644cef;
+  background-color: #644cef !important;
 }
 
 .card-atividades h3,
@@ -257,7 +269,7 @@
 
 /* === CARD ENCERRADAS === */
 .card-encerradas {
-  background-color: rgb(242, 28, 13);
+  background-color: rgb(242, 28, 13) !important;
   border: 2px solid #ccc;
   padding: 20px;
   border-radius: 12px;
@@ -267,7 +279,7 @@
 }
 
 .card-encerradas:hover {
-  background-color: #f56363;
+  background-color: #f56363 !important;
 }
 
 .card-encerradas h3,
@@ -296,7 +308,7 @@
 
 /* === CARD ENTREGUES === */
 .card-entregues {
-  background-color: rgb(246, 128, 10);
+  background-color: rgb(246, 128, 10) !important;
   border: 2px solid #ccc;
   padding: 20px;
   border-radius: 12px;
@@ -306,7 +318,7 @@
 }
 
 .card-entregues:hover {
-  background-color: #f49247;
+  background-color: #f49247 !important;
 }
 
 .card-entregues h3,
@@ -447,5 +459,54 @@
   }
 }
 
+.dashboard_card {
+    background-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 100px;
+    padding: 10px;
+    row-gap: 20px;
+     margin-top: 80;
+}
 
+.dashboard_section {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    min-height: 100vh;
+    padding: 2px;
+   
+    
 
+  }
+ /* Reseta qualquer estilo estranho */
+.link-menu {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+/* Corrige o hover */
+.link-menu:hover {
+  background-color: #3b44e0;
+  color: white;
+}
+
+/* Estilo quando o link estiver ativo */
+.link-menu.ativo {
+  background-color: #3b44e0 !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* Remove qualquer efeito indesejado de foco */
+.link-menu:focus {
+  outline: none;
+  box-shadow: none;
+}

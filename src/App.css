@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+.containerConteudo {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    padding: 0;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.containerPrincipal {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100hv;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sgp_logo_horizontal {
+    align-self: center;
+    background-color: transparent;
+    height: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sgp_logo_vertical {
+    align-self: center;
+    background-color: transparent;
+    width: 50%;
 }
