@@ -1,16 +1,18 @@
-const API_URL = "http://localhost:8082/api";
+// import axios from "axios";
 
-export async function buscarTarefas() {
-  const resposta = await fetch(`${API_URL}/tarefas`);
-  return resposta.json();
-}
+// const API_URL = "http://localhost:8081";
 
-export async function buscarProjetos() {
-  const resposta = await fetch(`${API_URL}/projetos`);
-  return resposta.json();
-}
+// export async function buscarTarefas() {
+//   const resposta = await axios.get(`${API_URL}/tarefas/listar`);
+//   return resposta.data;
+// }
 
-export async function buscarUsuarios() {
-  const resposta = await fetch(`${API_URL}/usuarios`);
-  return resposta.json();
-}
+// export async function buscarProjetos() {
+//   const resposta = await axios.get(`${API_URL}/projetos/listar`);
+//   return resposta.data;
+// }
+
+// export async function buscarUsuarios() {
+//   const resposta = await axios.get(`${API_URL}/usuarios/listar`);
+//   return resposta.data;
+// }

@@ -1,0 +1,40 @@
+.perfil-popup-container {
+  position: fixed;
+  top: 80px; /* abaixo do topo */
+  right: 20px;
+  z-index: 1500;
+  background-color: transparent;
+}
+
+.perfil-popup {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.perfil-conteudo p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}

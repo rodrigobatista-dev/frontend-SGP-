@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// import Login from "../pages/Login/Login";
+import Login from "../components/Login/Login";
 // import Page404 from "../pages/Page404/Page404"
 import Dashboard from "../components/Dashboard/Dashboard";
 import UsuarioForm from "../page/UsuarioPageForm";
@@ -17,9 +17,10 @@ class Rotas extends React.Component {
       <>
         <BrowserRouter>
           <Routes>
-            {/* <Route index path="/" element={<Login />} />
-            <Route index path="/login" element={<Login />} />
-            <Route index path="/logout" element={<Login action="logout" />} /> */}
+            
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Login action="logout" />} />
 
             <Route path="/dashboard" element={<Dashboard />} />
 
